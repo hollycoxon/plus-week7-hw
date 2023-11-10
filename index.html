@@ -4,33 +4,58 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SheCodes Weather</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
-    <header>
-      <form>
-        <input type="search" placeholder="Enter a city..." />
-        <input type="submit" value="Search" />
-      </form>
-    </header>
-    <section>
-      <h1>Paris</h1>
-      <div>Thursday 17:00, broken clouds</div>
-      <div>Humidity:87%, Wind: 5.66km/h</div>
-      <div>☁️ 9°C</div>
-    </section>
-    <br />
-    <footer>
-      Coded by
-      <a href="https://github.com/hollycoxon" target="_blank">Holly Coxon</a>.
-      Code hosted on
-      <a href="https://github.com/hollycoxon/plus-week7-hw" target="_blank"
-        >Github</a
-      >
-      and website hosted on
-      <a href="https://shecodes-plus-weather-hw7.netlify.app/" target="_blank"
-        >Netlify</a
-      >.
-    </footer>
+    <div class="container">
+      <header>
+        <form>
+          <input
+            type="search"
+            placeholder="Enter a city..."
+            class="search-input-box"
+          />
+          <input type="submit" value="Search" class="search-button" />
+        </form>
+      </header>
+      <main>
+        <div class="all-weather-data">
+          <div>
+            <h1 class="city">Paris</h1>
+            <p class="current-weather">
+              Thursday 17:00, broken clouds
+              <br />
+              Humidity: <span class="weather-value"> 87%</span>, Wind:
+              <span class="weather-value">5.66km/h</span>
+            </p>
+          </div>
+          <div class="current-temp">
+            <div>☁️</div>
+            <div>9</div>
+            <div class="unit">°C</div>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        This project was coded by
+        <a href="https://github.com/hollycoxon" target="_blank">Holly Coxon</a>,
+        is
+        <a href="https://github.com/hollycoxon/plus-week7-hw" target="_blank"
+          >open-sourced on Github</a
+        >
+        and
+        <a href="https://shecodes-plus-weather-hw7.netlify.app/" target="_blank"
+          >hosted on Netlify</a
+        >.
+      </footer>
+    </div>
     <script src="src/javascript.js"></script>
   </body>
 </html>
