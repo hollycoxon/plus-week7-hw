@@ -10,7 +10,7 @@ function formatDate(date) {
   ];
   let day = weekDays[date.getDay()];
   let hour = date.getHours();
-  let minute = date.getMinutes();
+  let minute = date.getMinutes().toString().padStart(2, "0");
   let time = `${hour}:${minute}`;
   let dateTimeElement = document.querySelector("#dateTime");
   dateTimeElement.innerHTML = `${day} ${time}`;
