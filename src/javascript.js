@@ -51,10 +51,14 @@ function cityUpdate(response) {
 function search(event) {
   event.preventDefault();
   let searchInput = document.querySelector("#search-input-box");
-
+  callAPI(searchInput.value);
+}
+function callAPI(city) {
   let apiKey = "eb90b6ft43fead476caf1eb7234o9610";
-  apiUrl = `https://api.shecodes.io/weather/v1/current?query=${searchInput.value}&key=${apiKey}`;
+  apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
   axios.get(apiUrl).then(cityUpdate);
 }
 let searchButton = document.querySelector("#search-form");
 searchButton.addEventListener("submit", search);
+
+callAPI("London");
