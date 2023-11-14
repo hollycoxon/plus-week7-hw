@@ -30,14 +30,21 @@
           <div>
             <h1 class="city">Paris</h1>
             <p class="current-weather">
-              Thursday 17:00, broken clouds
+              <span id="dateTime">Thursday 17:00</span>,
+              <span class="description">broken clouds</span>
               <br />
-              Humidity: <span class="weather-value"> 87%</span>, Wind:
-              <span class="weather-value">5.66km/h</span>
+              Humidity: <span class="weather-value" id="humidity"> 87%</span>,
+              Wind:
+              <span class="weather-value" id="wind">5.66km/h</span>
             </p>
           </div>
           <div class="current-temp">
-            <div>☁️</div>
+            <div id="icon">
+              <img
+                src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-night.png"
+                alt=""
+              />
+            </div>
             <div id="temperature">9</div>
             <div class="unit">°C</div>
           </div>

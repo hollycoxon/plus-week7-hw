@@ -1,14 +1,52 @@
-function temperatureUpdate(response) {
+function formatDate(date) {
+  let weekDays = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = weekDays[date.getDay()];
+  let hour = date.getHours();
+  let minute = date.getMinutes();
+  let time = `${hour}:${minute}`;
+  let dateTimeElement = document.querySelector("#dateTime");
+  dateTimeElement.innerHTML = `${day} ${time}`;
+}
+
+function weatherUpdate(response) {
   let temp = Math.round(response.data.temperature.current);
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = temp;
+  let humidity = Math.round(response.data.temperature.humidity);
+  let humidityElement = document.querySelector("#humidity");
+  humidityElement.innerHTML = `${humidity}%`;
+  let wind = Math.round(response.data.wind.speed * 10) / 10;
+  let windElement = document.querySelector("#wind");
+  windElement.innerHTML = `${wind}km/h`;
+  let description = response.data.condition.description;
+  let descriptionElement = document.querySelector(".description");
+  descriptionElement.innerHTML = description;
+  let icon = response.data.condition.icon_url;
+  let iconElement = document.querySelector("#icon");
+  iconElement.innerHTML = `
+    <img
+      src="${icon}"
+      alt="${description}"
+    />
+  `;
+  let epochDate = response.data.time * 1000;
+  let date = new Date(epochDate);
+  formatDate(date);
 }
 
 function cityUpdate(response) {
   let city = response.data.city;
   let cityElement = document.querySelector(".city");
   cityElement.innerHTML = city;
-  temperatureUpdate(response);
+  weatherUpdate(response);
 }
 function search(event) {
   event.preventDefault();
